@@ -29,3 +29,10 @@ jobs:
         with:
           name: zipped-bundle
           path: ${{ github.sha }}.zip
+      - name: Install docker
+        uses: docker-practice/actions-setup-docker@master
+      - run: |
+             set -x
+             docker version
+             docker run --rm hello-world
+        
